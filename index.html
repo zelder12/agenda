@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/ico.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/estilosResponsive.css">
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <title>Agenda Contactos</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="titulo">Agenda Contactos</h1>
+        <div class="menu">
+            <span class="material-symbols-outlined menu-button menu-icon">menu</span>
+            <div class="dropdown-content" id="dropdown">
+                <a href="index.html">Inicio</a>
+                <a href="aboutus.html">Acerca de Nosotros</a>
+                <a href="https://zelder12.github.io/politicas/">Términos y Condiciones</a>
+                <div class="switch-container">
+                    <label class="switch-label">Modo Oscuro/Claro</label>
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Agenda de contactos</h2>
+        <div class="formulario-datos">
+            <div class="input-container">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" class="nombre" placeholder="Nombre">
+            </div>
+            <div class="input-container">
+                <label for="numero">Número:</label>
+                <input type="text" id="numero" class="numero" placeholder="Número">
+            </div>
+            <div class="input-container">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" class="direccion" placeholder="Dirección">
+            </div>
+            <button class="btn-agregar-tareas">Agregar Contacto</button>
+        </div>
+        <div class="tabla">
+            <table class="Listado-Tareas">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Número</th>
+                        <th>Dirección</th>
+                        <th>Acciones</th>
+                        <th>Recordatorios</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        
+
+        <div id="modalRecordatorio" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Agregar Recordatorio</h2>
+                <input type="text" id="recordatorioTexto" placeholder="Texto del recordatorio">
+                <input type="datetime-local" id="recordatorioFecha">
+                <button id="btnGuardarRecordatorio">Guardar Recordatorio</button>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="js/header.js"></script>
+    <script src="js/funciones.js"></script>
+</body>
+
+</html>
