@@ -86,6 +86,7 @@ const crearContacto = (parentNode, contacto, db) => {
     iconoWhatsApp.classList.add('material-icons', 'record');
     iconoEditar.classList.add('material-icons', 'editar');
     iconoLlamar.classList.add('material-icons', 'llamar');
+    <!-- La funcion 'tel:' sirve para crear un enlace telefónico -->
     iconoLlamar.href = `tel:${contacto.numero}`;
 
     iconoBorrar.onclick = () => {
