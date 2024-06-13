@@ -1,0 +1,30 @@
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    .tabla{
+        overflow-x: scroll;
+    }
+
+    header {
+        padding: 5px 10px; /* Reducir el padding del encabezado */
+    }
+    .menu-button {
+        font-size: 24px; /* Reducir el tamaño del icono del menú */
+    }
+    .modal-content {
+        width: 80%; /* Ajustar el ancho del modal para dispositivos móviles */
+    }
+}
+
+/* Estilos para tabletas */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .container {
+        width: 90%; /* Reducir el ancho del contenedor en tabletas */
+    }
+}
+
+/* Estilos para pantallas grandes */
+@media only screen and (min-width: 1025px) {
+    .container {
+        width: 70%; /* Reducir el ancho del contenedor en pantallas grandes */
+    }
+}

@@ -1,0 +1,340 @@
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #000;
+    --primary-color: #777;
+    --secondary-color: #aeaeae;
+    --border-color: #000;
+    --table-header-bg: #c3c3c3;
+    --table-row-even-bg: #ccc;
+    --modal-overlay: rgba(0, 0, 0, 0.4);
+    --input-bg: #f4f4f4;
+    --borrar-color: #ff0000;
+    --agregar-color: #002a85;
+    --enviar-color: #08a00d;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #fff;
+    --primary-color: #555;
+    --secondary-color: #333;
+    --border-color: #444;
+    --table-header-bg: #555;
+    --table-row-even-bg: #333;
+    --modal-bg: #1e1e1e;
+    --modal-overlay: rgba(255, 255, 255, 0.1);
+    --input-bg: #1e1e1e;
+    --borrar-color: #fa3434;
+    --agregar-color: #7fa7fb;
+    --enviar-color: #37df3d;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: calc(100% - 40px);
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin: 0px 10px;
+}
+
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-button {
+    margin-right: 10px;
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--input-bg);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+    border-radius: 4px;
+    padding: 10px;
+    width: 150px;
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--secondary-color);
+}
+
+.switch-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.show {
+    display: block;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-top: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.switch-label {
+    margin-bottom: 5px;
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.container {
+    width: 80%;
+    margin: 90px auto 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formulario-datos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--input-bg);
+    color: var(--text-color);
+}
+
+input::placeholder{
+    color:var(--text-color);
+}
+
+input[type="datetime-local"]{
+    outline: none;
+    padding: 10px;
+    width: 50%;
+    background-color: var(--input-bg);
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+}
+
+::-webkit-calendar-picker-indicator{
+    cursor: pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px var(--input-bg) inset;
+}
+
+button.btn-agregar-tareas {
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 150px;
+    margin-top: 10px;
+}
+
+button.btn-agregar-tareas:hover {
+    background-color: var(--primary-color);
+}
+
+.Listado-Tareas {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: var(--input-bg);
+}
+
+.Listado-Tareas th, .Listado-Tareas td {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.Listado-Tareas th {
+    background-color: var(--table-header-bg);
+}
+
+.Listado-Tareas tr:nth-child(even) {
+    background-color: var(--table-row-even-bg);
+}
+
+tr {
+    border: 1px solid var(--border-color);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--modal-overlay);
+}
+
+.modal-content {
+    background-color: var(--input-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin: 10% auto;
+}
+
+.modal-content input {
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+#btnGuardarRecordatorio {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--secondary-color);
+}
+
+.Recordatorio {
+    margin: 10px auto 10px auto;
+    width: 90%;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.close {
+    color: var(--secondary-color);
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* estilos de los iconos */
+
+.record, .borrar, .enviar {
+    cursor: pointer;
+}
+
+.record {
+    color: var(--agregar-color);
+}
+
+.borrar {
+    color: var(--borrar-color);
+}
+
+.enviar, .editar {
+    color: var(--enviar-color);
+}
+
+.llamar{
+    color: var(--agregar-color);
+    text-decoration: none;
+}
