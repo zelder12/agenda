@@ -86,8 +86,8 @@ const crearContacto = (parentNode, contacto, db) => {
     iconoWhatsApp.classList.add('material-icons', 'record');
     iconoEditar.classList.add('material-icons', 'editar');
     iconoLlamar.classList.add('material-icons', 'llamar');
-    <!-- La funcion 'tel:' sirve para crear un enlace telefónico -->
     iconoLlamar.href = `tel:${contacto.numero}`;
+     //La funcion 'tel:' sirve para crear un enlace telefónico 
 
     iconoBorrar.onclick = () => {
         eliminarContacto(contacto.id);
@@ -234,12 +234,12 @@ const crearRecordatorio = (parentNode, contacto, recordatorio, db) => {
         enviarWhatsApp(contacto.numero, recordatorio.texto, recordatorio.fecha);
     };
 
-    iconoEliminarRecordatorio.onclick = () => { // Acción al hacer clic en el botón de eliminar
+    iconoEliminarRecordatorio.onclick = () => { 
         if (confirm("¿Estás seguro de que quieres eliminar este recordatorio?")) {
             let index = contacto.recordatorios.indexOf(recordatorio);
-            contacto.recordatorios.splice(index, 1); // Eliminar el recordatorio del array
-            db.setItem(contacto.id, JSON.stringify(contacto)); // Actualizar en el almacenamiento
-            parentNode.removeChild(divRecordatorio); // Eliminar el div del recordatorio de la UI
+            contacto.recordatorios.splice(index, 1); 
+            db.setItem(contacto.id, JSON.stringify(contacto)); 
+            parentNode.removeChild(divRecordatorio); 
         }
     };
 
